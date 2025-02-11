@@ -269,13 +269,10 @@
         <!-- 사이드바 -->
         <div class="side">
             <div id="namecard">
-                <h2 class="title linebox">Maze</h2>
-                <a img src="dog.html">
-                <img src="media/dog/3.jpg" alt="">
-                </a>
+                <h2 class="title linebox">Maze</h2>        
+                    <img src="media/dog/3.jpg" data-link="dog.html" class="clickable-img">     
             </div>
             <button onclick="fnAlert()" class="boogerText booger"> Do not click </button>
-            <a data-link="commnet.html"></a>
             </div>
             <div id="detail">
                 <p>Incheon, Korea</p>
@@ -385,10 +382,11 @@
     
     // 모달 만들어보기
         document.addEventListener("DOMContentLoaded", function(){
-    const images = document.querySelectorAll("img"); //모든 이미지 선택
+    const images = document.querySelectorAll("img[data-link]"); //모든 이미지 선택
     const modal = document.getElementById("modal");
     const modalFrame = document.getElementById("modalFrame");
     const closeBtn = document.getElementById("closeBtn");
+    
 
 
     modal.style.display = "none"; //모달이 처음부터 안열리게
@@ -413,6 +411,10 @@
         if(event.target === modal || event.target === closeBtn){
             modal.style.display = "none";
             modalFrame.src = ""; // iframe 초기화
+            
+            setTimeout(() => {
+                modalFrame.src = "";
+            }, 300);
         }
     });
 });
