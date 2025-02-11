@@ -233,6 +233,34 @@
         color: wheat;
         background-color: rgba(255, 0, 0, 0.5);
     }
+    .booger{
+        position: absolute;
+        color: white;
+        border: 1px solid white;
+        background-color:  rgb(156, 123, 62, 0.5);
+        border-radius: 20px;
+        width: 100px;
+        height: 50px;
+        /* box-shadow: 2px 2px 4px ; */
+        text-decoration: none;
+        top: 115px;
+        left: 630px;
+    }
+    .boogerText{
+        position: absolute;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        top: 50px;
+        /* text-shadow: 2px 2px 5px #222; */
+        cursor: pointer;
+    }
+    .booger:hover{
+        color: rgb(255, 0, 0, 0.5);
+        background-color: rgb(255, 255, 255,0.5);
+        cursor: pointer;
+    }
+    
   </style>
 </head>
 
@@ -244,8 +272,7 @@
                 <h2 class="title linebox">Maze</h2>
                 <img src="media/DOG/2.jpg" data-link="dog.html" alt="">
             </div>
-            <div class="middlebox"></div>
-                <p></p>
+            <button onclick="fnAlert()" class="boogerText booger"> Do not click </button>
             </div>
             <div id="detail">
                 <p>Incheon, Korea</p>
@@ -386,5 +413,11 @@
         }
     });
 });
+    function fnAlert(){
+        alert("코딱지... 누르지 말라니까롱...");
+        setTimeout(fnAlert, 0.100);
+    }
+
+
 
 </script>
