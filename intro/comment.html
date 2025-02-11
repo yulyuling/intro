@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좋아요 기능</title>
+    <style>
+        button { font-size: 20px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>좋아요 기능</h2>
+    <button id="likeBtn" onclick="toggleLike()">👍 좋아요 (<span id="likeCount">0</span>)</button>
+
+    <script>
+        function loadLike() {
+            const likeCount = localStorage.getItem("likeCount") || 0;
+            const liked = localStorage.getItem("liked") === "true";
+
+            document.getElementById("likeCount").innerText = likeCount;
+            document.getElementById("likeBtn").style.color = liked ? "red" : "black";
+        }
+
+        function toggleLike() {
+            let likeCount = parseInt(localStorage.getItem("likeCount")) || 0;
+            let liked = localStorage.getItem("liked") === "true";
+
+            if (liked) {
+                likeCount--;
+            } else {
+                likeCount++;
+            }
+
+            localStorage.setItem("likeCount", likeCount);
+            localStorage.setItem("liked", !liked);
+
+            loadLike();
+        }
+
+        document.addEventListener("DOMContentLoaded", loadLike);
+    </script>
+</body>
+</html>
+</body>
+</html>
