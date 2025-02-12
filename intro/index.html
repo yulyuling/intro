@@ -102,17 +102,14 @@
         align-items: center;
         height: calc(100vh - 50px);
     }
-    .side{
-        position: relative;
-    }
     .namecard {
-    position: fixed;
-    width: 500px;
-    height: 50px;
-    border: 1px solid rgb(138, 103, 58);
-    align-items: center;
-    gap: 10px;
-}
+        position: absolute;
+        width: 500px;
+        height: 50px;
+        border: 1px solid rgb(138, 103, 58);
+        align-items: center;
+        gap: 10px;
+    }
     #detail{
         position: relative;
         border: 3px dotted rgb(224, 224, 224);
@@ -433,15 +430,22 @@ window.addEventListener("resize", updateSNSPosition);
         let detail = document.getElementById("detail");
         let sns = document.getElementById("sns");
         let namecard = document.querySelector(".namecard");
-
-    if (detail && sns) {
-        let rect = detail.getBoundingClientRect(); // detail의 위치 정보 가져오기
-        sns.style.left = rect.left + window.scrollX + -6 + "px"; // 
-        sns.style.top = rect.top + window.scrollY + 130 +"px"; // detail과 같은 높이
-    }
-    if (namecard) {
-            namecard.style.left = rect.left + window.scrollX - 400 + "px"; // 왼쪽으로 400px 이동
-            namecard.style.top = rect.top + window.scrollY  + "px"; // `#detail`과 같은 높이
+        if (!detail) return;
+        
+        if (detail) {
+        let rect = detail.getBoundingClientRect();
+        
+        
+        if (sns) {
+            sns.style.left = rect.left + window.scrollX + "px";
+            sns.style.top = rect.bottom + window.scrollY + 20 + "px";
         }
+
+       
+        if (namecard) {
+            namecard.style.left = rect.left + window.scrollX - 400 + "px"; // 왼쪽으로 400px 이동
+            namecard.style.top = rect.top + window.scrollY - 40 + "px"; // `#detail`과 같은 높이
+        }
+    }
 }
 </script>
