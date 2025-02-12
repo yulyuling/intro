@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <style>
-    .bigBox{
+    /* .bigBox{
         position: relative;
         border: 1px solid wheat;
-    }
+    } */
 
     img{
         width:  300px; /* 원본 크기 유지 */
@@ -31,24 +31,12 @@
       padding:5px;  
       font-size:0.8em; 
     }
-    
-    .namecard{
-        position: absolute;
-        width: 500px;
-        height: 100%;
-        border: 1px solid rgb(138, 103, 58);
-        /* display: flex; */
-        /* align-items: center; */
-        /* gap: 10px; */
-        top:30%;
-        left: 50%;
-    }
     .title{
         position: absolute;
-        color: whitesmoke;
+        /* color: whitesmoke; */
         font-size: 123px;
         font-weight: bold;
-        top: -7.9%;
+        top: -5.9%;
 
     }
     #contents{
@@ -117,15 +105,14 @@
     .side{
         position: relative;
     }
-    .namecard{
-        position: absolute;
-        width: 500px;
-        height: autopx;
-        /* border: 1px solid rgb(255, 0, 0); */
-        align-items: center;
-        gap: 10px;
-        margin-left: px;
-    }
+    .namecard {
+    position: fixed;
+    width: 500px;
+    height: 50px;
+    border: 1px solid rgb(138, 103, 58);
+    align-items: center;
+    gap: 10px;
+}
     #detail{
         position: relative;
         border: 3px dotted rgb(224, 224, 224);
@@ -146,9 +133,6 @@
         width: 300px;
         text-align: center;
         color: rgb(114, 97, 77);
-        top: 500px;
-        left: 51%;
-        margin-left: 30px;
     }
     #sns:hover{
         color:rgb(252, 244, 229);
@@ -165,11 +149,9 @@
         font-weight: bold;
     }
     .linebox{
-        /* display: inline-block; */
         animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
     }
     @keyframes rotateText{
-        from{
         from{
             transform: rotateY(0deg);
         }
@@ -184,30 +166,8 @@
         to{
             transform: rotateY(0deg);
         }
-    }
-        /* @keyframes rotateText4{
-        100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.2);
-        }
-        10% {
-            transform: scale(1);
-        }
-    } */
-    .lineboxIntro{
-        /* display: inline-block; */
-        animation: rotateText 4s infinite alternate, 1s 2s;
-    }
-    @keyframes rotateText{
-        from{
-            transform: rotateY(0deg);
-        }
-        to{
-            transform: rotateY(180deg);
-        }
-    }
+        
+    }    
     #time{
         font-size: 35px;
         /* color: rgb(255, 255, 255); */
@@ -306,7 +266,7 @@
     }
     body.dark-mode{
         /* background-color: black; */
-        color: #cccccc;
+        color: #c0c0c0;
     }
     body.litgh-mode{
         color: #000000;
@@ -326,25 +286,16 @@
         <audio id="bgMusic" controls>
             <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
         </audio>
-        <button onclick="toggleMode()" class="darkbutton" style="color:whitesmoke">
+        <button onclick="toggleMode()" class="darkbutton">
             <span id="modeIcon" class="material-symbols-outlined">dark_mode</span>
         </button>   
         
-        <div class="side ">
             <div id="namecard">
                 <h2 class="title linebox"> Maze</h2>        
                     <img src="media\dog\3.jpg" onclick="location.href='dog.html'" class="light-image dark-mode">
                     <img src="media/dog/black2/34.jpg" onclick=" location.href='dog.html'" class="dark-image">
-                   
-        <div class="side">
-            
-            <h2 class=" title linebox"> Maze</h2>    
-            
-            <div id="namecard"> 
-                    <img src="media/DOG/3.jpg" onclick="location.href='dog.html'">
-                         <!-- data-link="dog.html" class="clickable-img" -->
             </div>
-        </div>    
+            
             <button onclick="fnAlert()" class="booger boogerText">Do not click</button>
 
             <div id="detail">
@@ -446,6 +397,7 @@ window.addEventListener("load", updateSNSPosition);
 // 스크롤 & 리사이즈 할 때도 위치 업데이트
 window.addEventListener("scroll", updateSNSPosition);
 window.addEventListener("resize", updateSNSPosition);
+
     setInterval(()=>{
         let datetime = new Date();
         let time = datetime.getHours()+":"+datetime.getMinutes()+":"+datetime.getSeconds();
@@ -457,6 +409,7 @@ window.addEventListener("resize", updateSNSPosition);
         alert("코딱지... 누르지 말라니까롱...");
         setTimeout(fnAlert, 0.100);
     }
+    
     function toggleMode() {
         var body = document.body;
         var audio = document.getElementById("bgMusic");
@@ -483,12 +436,12 @@ window.addEventListener("resize", updateSNSPosition);
 
     if (detail && sns) {
         let rect = detail.getBoundingClientRect(); // detail의 위치 정보 가져오기
-        sns.style.left = rect.left + window.scrollX + -6 + "px"; // detail 오른쪽으로 350px 떨어지게
+        sns.style.left = rect.left + window.scrollX + -6 + "px"; // 
         sns.style.top = rect.top + window.scrollY + 130 +"px"; // detail과 같은 높이
     }
     if (namecard) {
             namecard.style.left = rect.left + window.scrollX - 400 + "px"; // 왼쪽으로 400px 이동
-            namecard.style.top = rect.top + window.scrollY + "px"; // `#detail`과 같은 높이
+            namecard.style.top = rect.top + window.scrollY  + "px"; // `#detail`과 같은 높이
         }
 }
 </script>
