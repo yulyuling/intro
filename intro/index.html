@@ -3,9 +3,8 @@
 <head>
 	<title>Maze</title>
 	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <style>
-
-
     img{
         width:  300px; /* 원본 크기 유지 */
         height: 500px; /* 원본 크기 유지 */
@@ -27,16 +26,8 @@
       padding:5px;  
       font-size:0.8em; 
     }
-    .namecard{
-        width: 500px;
-        height: 100%;
-        border: 1px solid rgb(138, 103, 58);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+    
     .title{
-        color: whitesmoke;
         font-size: 123px;
         font-weight: bold;
         margin-bottom: -29px;
@@ -98,99 +89,123 @@
     #container{
         position: relative;
         display: flex;
-        background-color: rgb(63, 45, 10, 0);
+        flex-direction: row;
+        /* background-color: rgb(63, 45, 10, 0); */
         justify-content: center;
         align-items: center;
         height: calc(100vh - 50px);
-        margin-top: 50px;
+    }
+    .side{
+        position: relative;
+    }
+    .namecard{
+        position: absolute;
+        width: 500px;
+        height: autopx;
+        /* border: 1px solid rgb(255, 0, 0); */
+        align-items: center;
+        gap: 10px;
+        margin-left: px;
     }
     #detail{
-        border: 3px dotted white;
+        position: relative;
+        border: 3px dotted rgb(224, 224, 224);
         border-radius: 20px;
         width: 300px;
+        left: 5.1%;
+        top: 0%;
         text-align: center;
-        color: white;
         font-weight: bold;
         font-size: 20px;
         /* text-shadow: 2px 2px 5px rgb(107, 107, 107); */
-        margin-left: 30px;
     }
     #sns{
         position: absolute;
-        top: 500px;
-        left: 51%;
-        color: rgb(114, 97, 77);
+        /* color: rgb(114, 97, 77); */
         border: 3px dotted rgb(114, 97, 77);
         border-radius: 20px;
         width: 300px;
         text-align: center;
     }
     #sns:hover{
-        color:wheat;
+        color:rgb(252, 244, 229);
         cursor: pointer;
     }
     .title:hover{
-        color:rgb(177, 136, 59);
+        color:rgb(102, 7, 7);
         cursor: pointer;
     }
     .fontstyle{
-        color: rgb(139, 91, 46);
+        color: rgb(255, 255, 255);
+        /* text-shadow: 0px 0px 2px rgb(70, 70, 70); */
         font-size: 20px;
         font-weight: bold;
-        /* text-shadow: -1px 0px white, 0px 1px white, 1px 0px white, 0px -1px white; */
     }
     .linebox{
         /* display: inline-block; */
-        animation: rotateText 4s infinite alternate, 1s 2s;
+        animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
     }
     @keyframes rotateText{
-        fron{
-            transform: rotateY(0deg);
-        }
-        to{
-            transform: rotateY(360deg);
-        }
-    }
-    .lineboxIntro{
-        /* display: inline-block; */
-        animation: rotateText 4s infinite alternate, 1s 2s;
-    }
-    @keyframes rotateText{
-        fron{
+        from{
             transform: rotateY(0deg);
         }
         to{
             transform: rotateY(180deg);
         }
     }
+    @keyframes rotateText2{
+        from{
+            transform: rotateY(180deg);
+        }
+        to{
+            transform: rotateY(0deg);
+        }
+    }
+        /* @keyframes rotateText4{
+        100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        10% {
+            transform: scale(1);
+        }
+    } */
+    .lineboxIntro{
+        /* display: inline-block; */
+        animation: rotateText 4s infinite alternate, 1s 2s;
+    }
     #time{
-        font-size: 40px;
-        color: rgb(255, 255, 255);
+        font-size: 35px;
+        /* color: rgb(255, 255, 255); */
         font-weight: bold;
         text-align: center;
-        margin-top: -80px;
-        margin-left: -190px;
+        margin-top: -857px;
+        margin-left: -70%;
     }
     .booger{
-        position: absolute;
-        color: white;
-        border: 1px solid white;
-        background-color:  rgb(156, 123, 62, 0.5);
+        /* color: white; */
+        border: 1px solid rgb(119, 119, 119);
+        background-color:  rgba(0, 0, 0, 0.5);
         border-radius: 20px;
         width: 100px;
         height: 50px;
         /* box-shadow: 2px 2px 4px ; */
         text-decoration: none;
         top: 115px;
-        left: 630px;
+        left: 650px;
+        display: flex;
     }
     .boogerText{
         position: absolute;
-        text-decoration: none;
+        align-items: center;
+        margin-left: 10px;
         color: white;
         font-weight: bold;
-        top: 50px;
-        /* text-shadow: 2px 2px 5px #222; */
+        top: 10px;
+        left: 350px;
+        text-shadow: 2px 2px 5px #808080;
         cursor: pointer;
     }
     .booger:hover{
@@ -198,21 +213,100 @@
         background-color: rgb(255, 255, 255,0.5);
         cursor: pointer;
     }
+    .light-mode{
+        background-color: rgb(235, 191, 134);
+        color: rgb(255, 0, 0);    
+    }
+    .lightbutton {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: none;
+        background: none;
+        font-size: 18px;
+    }
+    .dark-mode{
+        background-image: url("media/dog/dark/9.jpg");
+        background-size: cover;
+        color: rgba(255, 0, 0, 0.1);
+    }
+    .light-image {
+        display: block;
+    }
+    .dark-image {
+        display: none;
+    }
+    .dark-mode .light-image {
+        display: none;
+    }
+    .dark-mode .dark-image {
+        display: block;
+    }
+    .darkbutton{
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: none;
+        background: none;
+        font-size: 18px;
+    }
+    .material-symbols-outlined{
+        position: relative;
+        /* display: flex; */
+        font-size: 40px;
+        margin-top: -810px;
+        margin-left: -630px;
+    }
+    .bigBox{
+        position: relative;
+        border: none;
+    }
+    #bgMusic{
+        margin-top: -800px;
+    }
+    body.dark-mode{
+        /* background-color: black; */
+        color: #cccccc;
+    }
+    body.litgh-mode{
+        color: #000000;
+    }
+    
     
   </style>
 </head>
 
 <body>
+ 
     <div id="container">
         <!-- 사이드바 -->
-        <div class="side">
+        
+
+        <audio id="bgMusic" controls>
+            <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="toggleMode()" class="darkbutton" style="color:whitesmoke">
+            <span id="modeIcon" class="material-symbols-outlined">dark_mode</span>
+        </button>   
+        
+        <div class="side ">
             <div id="namecard">
                 <h2 class="title linebox"> Maze</h2>        
-                    <img src="media\dog\3.jpg">
-                         <!-- data-link="dog.html" class="clickable-img" -->
+                    <img src="media\dog\3.jpg" onclick="location.href='dog.html'" class="light-image dark-mode">
+                    <img src="media/dog/black2/34.jpg" onclick=" location.href='dog.html'" class="dark-image">
+                   
             </div>
-            <button onclick="fnAlert()" class="boogerText booger"> Do not click </button>
-            </div>
+        </div>    
+            <button onclick="fnAlert()" class="booger boogerText">Do not click</button>
+
             <div id="detail">
                 <p>Incheon, Korea</p>
                 <p>test@naver.com</p>                                 
@@ -220,7 +314,7 @@
             <div id="sns">
                 <h2>SNS</h2>
                 <h3><a href="#"></a></h3>
-            </div>           
+            </div>      
         </div>
         <div>
             <div id="time"></div>
@@ -228,7 +322,7 @@
 
         <div id="contents">
             <section>
-                <h2 style="font-size: 80px; color: white; margin-bottom: -19px; margin-left:430px;">Introduce</h2>
+                <h2 style="font-size: 80px; margin-bottom: -19px; margin-left:430px;">Introduce</h2>
                 <div class="introduce fontstyle">
                     <p>프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
                 </div>
@@ -236,7 +330,7 @@
 
             <!-- 경력 -->
             <section>
-                <h2  style="font-size: 80px; color: white; margin-bottom: -19px; margin-left:390px;">Experience</h2>
+                <h2  style="font-size: 80px;; margin-bottom: -19px; margin-left:390px;">Experience</h2>
                 <div class="Experience fontstyle ">
                 <ul>
                     <li>프론트엔드
@@ -258,7 +352,7 @@
 
             <!-- 숙련도 -->
             <section>
-                <h2 class="lineboxIntro" style="font-size: 80px; color: white; margin-bottom: -19px; margin-left:600px;">Skills</h2>
+                <h2 class="lineboxIntro" style="font-size: 80px; margin-bottom: -19px; margin-left:600px;">Skills</h2>
                 <div class="Skills fontstyle">
                 <li style="list-style: none;"> 
                     <ul>
@@ -268,10 +362,9 @@
                 </li>
             </div>
             </section>
-
             <!-- 학력 -->
             <section>
-                <h2 style="font-size: 80px; color: white; margin-bottom: -19px; margin-left:420px;">Education</h2>
+                <h2 style="font-size: 80px; margin-bottom: -19px; margin-left:420px;">Education</h2>
                 <div class="fontstyle Education">
                 <table>
                   <caption>학력 사항</caption>
@@ -306,6 +399,13 @@
 </body>
 </html>
 <script>
+
+// 페이지 로드 시 위치 업데이트
+window.addEventListener("load", updateSNSPosition);
+
+// 스크롤 & 리사이즈 할 때도 위치 업데이트
+window.addEventListener("scroll", updateSNSPosition);
+window.addEventListener("resize", updateSNSPosition);
     setInterval(()=>{
         let datetime = new Date();
         let time = datetime.getHours()+":"+datetime.getMinutes()+":"+datetime.getSeconds();
@@ -317,5 +417,38 @@
         alert("코딱지... 누르지 말라니까롱...");
         setTimeout(fnAlert, 0.100);
     }
+    function toggleMode() {
+        var body = document.body;
+        var audio = document.getElementById("bgMusic");
+        var source = document.getElementById("audioSource");
+        var modeIcon = document.getElementById("modeIcon");
 
+
+        if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            source.src =  "https://yulyuling.github.io/music/music/LittleSamba.mp3";
+            modeIcon.innerHTML = "dark_mode";
+        } else {
+            body.classList.add("dark-mode");
+            source.src = "https://yulyuling.github.io/music/music/MissingPersons.mp3";
+            modeIcon.innerHTML = "light_mode";
+        }
+            audio.load();
+            audio.play();
+        }
+    function updateSNSPosition() {
+        let detail = document.getElementById("detail");
+        let sns = document.getElementById("sns");
+        let namecard = document.querySelector(".namecard");
+
+    if (detail && sns) {
+        let rect = detail.getBoundingClientRect(); // detail의 위치 정보 가져오기
+        sns.style.left = rect.left + window.scrollX + -6 + "px"; // detail 오른쪽으로 350px 떨어지게
+        sns.style.top = rect.top + window.scrollY + 130 +"px"; // detail과 같은 높이
+    }
+    if (namecard) {
+            namecard.style.left = rect.left + window.scrollX - 400 + "px"; // 왼쪽으로 400px 이동
+            namecard.style.top = rect.top + window.scrollY + "px"; // `#detail`과 같은 높이
+        }
+}
 </script>
