@@ -4,7 +4,10 @@
 	<title>Maze</title>
 	<meta charset="utf-8">
   <style>
-
+    .bigBox{
+        position: relative;
+        border: 1px solid wheat;
+    }
 
     img{
         width:  300px; /* 원본 크기 유지 */
@@ -28,18 +31,23 @@
       font-size:0.8em; 
     }
     .namecard{
+        position: absolute;
         width: 500px;
         height: 100%;
         border: 1px solid rgb(138, 103, 58);
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        /* display: flex; */
+        /* align-items: center; */
+        /* gap: 10px; */
+        top:30%;
+        left: 50%;
     }
     .title{
+        position: absolute;
         color: whitesmoke;
         font-size: 123px;
         font-weight: bold;
-        margin-bottom: -29px;
+        top: -7.9%;
+
     }
     #contents{
         position: absolute;
@@ -116,14 +124,14 @@
         margin-left: 30px;
     }
     #sns{
-        position: absolute;
-        top: 500px;
-        left: 51%;
-        color: rgb(114, 97, 77);
         border: 3px dotted rgb(114, 97, 77);
         border-radius: 20px;
         width: 300px;
         text-align: center;
+        color: rgb(114, 97, 77);
+        top: 500px;
+        left: 51%;
+        margin-left: 30px;
     }
     #sns:hover{
         color:wheat;
@@ -144,7 +152,7 @@
         animation: rotateText 4s infinite alternate, 1s 2s;
     }
     @keyframes rotateText{
-        fron{
+        from{
             transform: rotateY(0deg);
         }
         to{
@@ -156,7 +164,7 @@
         animation: rotateText 4s infinite alternate, 1s 2s;
     }
     @keyframes rotateText{
-        fron{
+        from{
             transform: rotateY(0deg);
         }
         to{
@@ -202,12 +210,14 @@
   </style>
 </head>
 
-<body>
+<body class="bigBox">
     <div id="container">
         <!-- 사이드바 -->
         <div class="side">
+            
+            <h2 class=" title linebox"> Maze</h2>    
+            
             <div id="namecard">
-                <h2 class="title linebox"> Maze</h2>        
                     <img src="media/DOG/3.jpg">
                          <!-- data-link="dog.html" class="clickable-img" -->
             </div>
