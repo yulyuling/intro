@@ -93,12 +93,10 @@
         justify-content: center;
         align-items: center;
     }
-    .main{
-
-    }
-    @media screen and (max-width : 768px){
+    /* @media screen and (max-width : 1980px){
         main{
-            display: block;
+            width: 100%;
+            left: 0%;
         }
         #contaniner{
             width: 100%;
@@ -127,7 +125,7 @@
             width: 100%;
             display: block;
         }
-    }
+    } */
     #container{
         position: relative;
         display: flex;
@@ -283,11 +281,11 @@
         font-size: 18px;
     }
     .material-symbols-outlined{
-        position: relative;
+        /* position: relative; */
         /* display: flex; */
         font-size: 40px;
-        margin-top: -810px;
-        margin-left: -630px;
+        margin-top: -820px;
+        margin-left: 0px;
     }
     .bigBox{
         position: relative;
@@ -295,6 +293,7 @@
     }
     #bgMusic{
         margin-top: -800px;
+        left: -500px;
     }
     body.dark-mode{
         background-color: black;
@@ -314,7 +313,6 @@
     <div id="container">
         <!-- 사이드바 -->
         
-        <div class="main">
         <audio id="bgMusic" controls>
             <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
         </audio>
@@ -327,7 +325,6 @@
                     <img src="media/DOG/3.jpg" class="light-image dark-mode">
                     <img src="media/DOG/black2/34.jpg" class="dark-image">
             </div>
-        </div>
             
             
             <!-- <img src="media\dog\3.jpg" onclick=" location.href='dog.html'" class="light-image dark-mode"> -->
