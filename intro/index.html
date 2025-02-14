@@ -41,10 +41,11 @@
       height: 700px;
     }
     .left-half {
+        position: relative;
         background-color: rgb(235, 191, 134);
     }
     .right-half {
-        /* position: relative; */
+        position: relative;
         background-color: rgb(235, 191, 134);
         /* width: 50%; */
         
@@ -180,15 +181,16 @@
         gap: 10px;
     }
     #detail{
+        position: absolute;
         border: 3px dotted rgb(224, 224, 224);
         border-radius: 20px;
         top: 300px;
-        /* left: ; */
+        left: -200px;
         width: 300px;
+        clear: both;
         
     }
-    .title{
-        
+    .title{        
         position: absolute;
         left: 550px;
         color: whitesmoke;
@@ -199,13 +201,16 @@
 
     }
     #sns{
-        /* position: absolute; */
+        position: absolute;
         /* color: rgb(114, 97, 77); */
         border: 3px dotted rgb(114, 97, 77);
         border-radius: 20px;
         width: 300px;
         text-align: center;
         color: rgb(114, 97, 77);
+        top: 370px;
+        right: 665px
+        
     }
     #sns:hover{
         color:rgb(252, 244, 229);
@@ -222,6 +227,9 @@
         font-weight: bold;
     }
     .linebox{
+        position: absolute;
+        top:-30px;
+        font-size: 120px;
         animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
     }
     @keyframes rotateText{
@@ -242,12 +250,12 @@
         
     }    
     #time{
+        position: absolute;
         font-size: 35px;
         /* color: rgb(255, 255, 255); */
         font-weight: bold;
         text-align: center;
-        margin-top: -857px;
-        margin-left: -70%;
+        top: 100px;
     }
     .booger{
         /* color: white; */
@@ -360,29 +368,24 @@
         </button>   
         <div class="left-half">
         <h2 class="linebox"> Maze</h2>        
+            <div id="time"></div>
             <div id="namecard">
                     <img src="media/DOG/3.jpg" class="light-image dark-mode">
                     <img src="media/DOG/black2/34.jpg" class="dark-image">
             </div>
         </div>
             
-            
-            <!-- <img src="media\dog\3.jpg" onclick=" location.href='dog.html'" class="light-image dark-mode"> -->
-            
-            <button onclick="fnAlert()" class="booger boogerText">Do not click</button>
+
+            <!-- <button onclick="fnAlert()" class="booger boogerText">Do not click</button> -->
 
         <div class="right-half">
             <div id="detail" class="title">
                 <p>Incheon, Korea</p>
-                <p>test@naver.com</p>                                 
-        </div>
+                <p>test@naver.com</p>  
+            </div>                             
             <div id="sns">
-                <h2>SNS</h2>
-                <h3><a href="#"></a></h3>
+                    <h2>SNS</h2>
             </div>      
-        </div>
-        <div>
-            <div id="time"></div>
         </div>
 
         <div id="contents">
