@@ -5,39 +5,75 @@
 	<meta charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <style>
-    /* .bigBox{
-        position: relative;
-        border: 1px solid wheat;
-    } */
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: sans-serif;
+      max-width: 1900px; /* 페이지 최대 폭 제한 (원하는 대로 조정) */
+      margin: 0 auto;
+      background-color: rgb(235, 191, 134);
+    }
+
+    /* (1) 맨 위 얇은 바 */
+    .top-bar {
+      width: 100%;
+      background-color: #f5d142;
+      padding: 50px;       /* 세로로 10px 간격 */
+      text-align: center;  /* 텍스트 가운데 정렬 */
+    }
+
+    /* (2) 50:50 영역 */
+    .header-section {
+      display: flex;
+      width: 100%;
+      background-color: #f0f0f0;
+    }
+
+    /* 왼쪽, 오른쪽 각각 50% */
+    .left-half,
+    .right-half {
+      flex: 1;
+      padding: 100px;
+      height: 700px;
+    }
+    .left-half {
+        background-color: rgb(235, 191, 134);
+    }
+    .right-half {
+        /* position: relative; */
+        background-color: rgb(235, 191, 134);
+        /* width: 50%; */
+        
+    }
+
+    /* (3) 중간 얇은 바 */
+    .middle-section {
+      width: 100%;
+      background-color: #ccc;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* (4) 하단 큰 영역 */
+    .bottom-section {
+      width: 100%;
+      min-height: 300px; /* 필요하면 원하는 높이로 조절 */
+      padding: 20px;
+      background-color: #eeeeee;
+    }
+    @media screen and (max-width: 768px) {
+        .header-section {
+        flex-direction: column; /* 좌우 2열 → 상하 배치로 변경 */
+    }
+}
     img{
         width:  300px; /* 원본 크기 유지 */
         height: 500px; /* 원본 크기 유지 */
 		cursor: pointer;
-    }
-    body{
-        background-color: rgb(235, 191, 134);
-    }
-    table {
-      width:70%; 
-      border:1px solid #222; 
-      border-collapse: collapse; 
-    }
-    thead {
-      background:#eee;  
-    }
-    th, td {
-      border:1px solid #ccc; 
-      padding:5px;  
-      font-size:0.8em; 
-    }
-    .title{
-        position: absolute;
-        /* color: whitesmoke; */
-        font-size: 123px;
-        font-weight: bold;
-        top: -5.9%;
-
     }
     #contents{
         position: absolute;
@@ -127,7 +163,7 @@
         }
     } */
     #container{
-        position: relative;
+        /* position: relative; */
         display: flex;
         flex-direction: row;
         /* background-color: rgb(63, 45, 10, 0); */
@@ -136,7 +172,7 @@
         height: calc(100vh - 50px);
     }
     .namecard {
-        position: absolute;
+        /* position: absolute; */
         width: 500px;
         height: 50px;
         border: 1px solid rgb(138, 103, 58);
@@ -144,19 +180,26 @@
         gap: 10px;
     }
     #detail{
-        position: relative;
         border: 3px dotted rgb(224, 224, 224);
         border-radius: 20px;
+        top: 300px;
+        /* left: ; */
         width: 300px;
-        left: 5.1%;
-        top: 0%;
-        text-align: center;
-        font-weight: bold;
+        
+    }
+    .title{
+        
+        position: absolute;
+        left: 550px;
+        color: whitesmoke;
         font-size: 20px;
-        /* text-shadow: 2px 2px 5px rgb(107, 107, 107); */
+        font-weight: bold;
+        text-align: center;
+        align-items: center;
+
     }
     #sns{
-        position: absolute;
+        /* position: absolute; */
         /* color: rgb(114, 97, 77); */
         border: 3px dotted rgb(114, 97, 77);
         border-radius: 20px;
@@ -220,7 +263,7 @@
         display: flex;
     }
     .boogerText{
-        position: absolute;
+        /* position: absolute; */
         align-items: center;
         margin-left: 10px;
         color: white;
@@ -287,10 +330,6 @@
         margin-top: -820px;
         margin-left: 0px;
     }
-    .bigBox{
-        position: relative;
-        border: none;
-    }
     #bgMusic{
         margin-top: -800px;
         left: -500px;
@@ -319,22 +358,24 @@
         <button onclick="toggleMode()" class="darkbutton">
             <span id="modeIcon" class="material-symbols-outlined">dark_mode</span>
         </button>   
-        
-        <h2 class="title linebox"> Maze</h2>        
+        <div class="left-half">
+        <h2 class="linebox"> Maze</h2>        
             <div id="namecard">
                     <img src="media/DOG/3.jpg" class="light-image dark-mode">
                     <img src="media/DOG/black2/34.jpg" class="dark-image">
             </div>
+        </div>
             
             
             <!-- <img src="media\dog\3.jpg" onclick=" location.href='dog.html'" class="light-image dark-mode"> -->
             
             <button onclick="fnAlert()" class="booger boogerText">Do not click</button>
 
-            <div id="detail">
+        <div class="right-half">
+            <div id="detail" class="title">
                 <p>Incheon, Korea</p>
                 <p>test@naver.com</p>                                 
-            </div>
+        </div>
             <div id="sns">
                 <h2>SNS</h2>
                 <h3><a href="#"></a></h3>
@@ -461,26 +502,5 @@ window.addEventListener("resize", updateSNSPosition);
             audio.load();
             audio.play();
         }
-    function updateSNSPosition() {
-        let detail = document.getElementById("detail");
-        let sns = document.getElementById("sns");
-        let namecard = document.querySelector(".namecard");
-        if (!detail) return;
-
-        if (detail) {
-        let rect = detail.getBoundingClientRect();
-        
-        
-        if (sns) {
-            sns.style.left = rect.left + window.scrollX + "px";
-            sns.style.top = rect.bottom + window.scrollY + 20 + "px";
-        }
-
-       
-        if (namecard) {
-            namecard.style.left = rect.left + window.scrollX - 400 + "px"; // 왼쪽으로 400px 이동
-            namecard.style.top = rect.top + window.scrollY - 40 + "px"; // `#detail`과 같은 높이
-        }
-    }
-}
+    
 </script>

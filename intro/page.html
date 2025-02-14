@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>홈페이지 레이아웃 예시</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      max-width: 1900px; /* 페이지 최대 폭 제한 (원하는 대로 조정) */
+      margin: 0 auto;
+    }
+
+    /* (1) 맨 위 얇은 바 */
+    .top-bar {
+      width: 100%;
+      background-color: #f5d142;
+      padding: 50px;       /* 세로로 10px 간격 */
+      text-align: center;  /* 텍스트 가운데 정렬 */
+    }
+
+    /* (2) 50:50 영역 */
+    .header-section {
+      display: flex;
+      width: 100%;
+      background-color: #f0f0f0;
+    }
+
+    /* 왼쪽, 오른쪽 각각 50% */
+    .left-half,
+    .right-half {
+      flex: 1;
+      padding: 100px;
+      height: 700px;
+    }
+    .left-half {
+      background-color: #d0d0d0;
+    }
+    .right-half {
+      background-color: #e0e0e0;
+    }
+
+    /* (3) 중간 얇은 바 */
+    .middle-section {
+      width: 100%;
+      background-color: #ccc;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* (4) 하단 큰 영역 */
+    .bottom-section {
+      width: 100%;
+      min-height: 300px; /* 필요하면 원하는 높이로 조절 */
+      padding: 20px;
+      background-color: #eeeeee;
+    }
+    @media screen and (max-width: 768px) {
+        .header-section {
+        flex-direction: column; /* 좌우 2열 → 상하 배치로 변경 */
+    }
+}
+  </style>
+<body>
+  <!-- (1) 맨 위 얇은 바 -->
+  <div class="top-bar">
+    <p>상단 알림/배너/메뉴 등</p>
+  </div>
+
+  <!-- (2) 50:50 영역 -->
+  <header class="header-section">
+    <div class="left-half">
+      <!-- 왼쪽 50% 콘텐츠 -->
+      <h1>Logo / 사이트 제목</h1>
+    </div>
+    <div class="right-half">
+      <!-- 오른쪽 50% 콘텐츠 -->
+      <nav>
+        <ul>
+          <li><a href="#">메뉴 1</a></li>
+          <li><a href="#">메뉴 2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- (3) 중간 얇은 바 -->
+  <section class="middle-section">
+    <p>공지/이벤트/배너 영역</p>
+  </section>
+
+  <!-- (4) 하단 큰 영역 -->
+  <section class="bottom-section">
+    <!-- 실제 메인 콘텐츠가 들어갈 부분 -->
+    <h2>메인 콘텐츠</h2>
+    <p>여기에 게시글 목록, 상품 리스트, 이미지 갤러리 등을 배치합니다.</p>
+  </section>
+</body>
+</html>
