@@ -16,41 +16,33 @@
       max-width: 1900px; /* 페이지 최대 폭 제한 (원하는 대로 조정) */
       margin: 0 auto;
       background-color: rgb(235, 191, 134);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
     }
-
-    /* (1) 맨 위 얇은 바 */
+        /* (1) 맨 위 얇은 바 */
     .top-bar {
-      width: 100%;
-      background-color: #f5d142;
-      padding: 50px;       /* 세로로 10px 간격 */
-      text-align: center;  /* 텍스트 가운데 정렬 */
+        position: absolute;
+        top: 0;
+        width: 100%;
+        /* border: 1px solid rgb(0, 0, 0); */
+        width: 100%;
+        padding: 50px;
+        text-align: left;
     }
 
     /* (2) 50:50 영역 */
     .header-section {
-      display: flex;
-      width: 100%;
-      background-color: #f0f0f0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color: rgb(235, 191, 134); */
     }
-
-    /* 왼쪽, 오른쪽 각각 50% */
-    .left-half,
-    .right-half {
-      flex: 1;
-      padding: 100px;
-      height: 700px;
-    }
-    .left-half {
-        position: relative;
-        background-color: rgb(235, 191, 134);
-    }
-    .right-half {
-        position: relative;
-        background-color: rgb(235, 191, 134);
-        /* width: 50%; */
-        
-    }
-
     /* (3) 중간 얇은 바 */
     .middle-section {
       width: 100%;
@@ -130,50 +122,13 @@
         justify-content: center;
         align-items: center;
     }
-    /* @media screen and (max-width : 1980px){
-        main{
-            width: 100%;
-            left: 0%;
-        }
-        #contaniner{
-            width: 100%;
-            margin-bottom: 5px;
-            display: block;
-        }
-        .namecard{
-            width: 100%;
-            margin-bottom: 5px;
-            display: block;
-        }
-        #detail{
-            width: 100%;
-            display: block;
-        }
-        .linebox{
-            width: 100%;
-            display: block;
-            clear: both;
-        }
-        #detail{
-            width: 100%;
-            display: block;
-        }
-        #sns{
-            width: 100%;
-            display: block;
-        }
-    } */
     #container{
-        /* position: relative; */
         display: flex;
-        flex-direction: row;
-        /* background-color: rgb(63, 45, 10, 0); */
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        height: calc(100vh - 50px);
     }
     .namecard {
-        /* position: absolute; */
+        position: absolute;
         width: 500px;
         height: 50px;
         border: 1px solid rgb(138, 103, 58);
@@ -181,35 +136,39 @@
         gap: 10px;
     }
     #detail{
-        position: absolute;
         border: 3px dotted rgb(224, 224, 224);
         border-radius: 20px;
-        top: 300px;
-        left: -200px;
         width: 300px;
-        clear: both;
+        height: 100px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: grid;       
         
     }
     .title{        
-        position: absolute;
-        left: 550px;
+        position: relative;
         color: whitesmoke;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
         align-items: center;
+        top:-270px;
+        left: 350px;
 
     }
     #sns{
-        position: absolute;
-        /* color: rgb(114, 97, 77); */
+        position: relative;
         border: 3px dotted rgb(114, 97, 77);
         border-radius: 20px;
         width: 300px;
-        text-align: center;
         color: rgb(114, 97, 77);
-        top: 370px;
-        right: 665px
+        top: -250px;
+        left: 350px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: grid; 
         
     }
     #sns:hover{
@@ -227,8 +186,8 @@
         font-weight: bold;
     }
     .linebox{
-        position: absolute;
-        top:-30px;
+        position: relative;
+        top:30px;
         font-size: 120px;
         animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
     }
@@ -250,12 +209,11 @@
         
     }    
     #time{
-        position: absolute;
+        position: relative;
         font-size: 35px;
-        /* color: rgb(255, 255, 255); */
         font-weight: bold;
-        text-align: center;
-        top: 100px;
+        left:70px;
+        top:-20px
     }
     .booger{
         /* color: white; */
@@ -320,23 +278,19 @@
         display: block;
     }
     .darkbutton{
+        position: relative;
         padding: 10px;
         font-size: 16px;
         cursor: pointer;
         margin-top: 20px;
-        display: flex;
-        align-items: center;
         gap: 5px;
         border: none;
         background: none;
         font-size: 18px;
+        top:-8px
     }
     .material-symbols-outlined{
-        /* position: relative; */
-        /* display: flex; */
         font-size: 40px;
-        margin-top: -820px;
-        margin-left: 0px;
     }
     #bgMusic{
         margin-top: -800px;
@@ -359,16 +313,18 @@
 <body class="bigBox">
     <div id="container">
         <!-- 사이드바 -->
-        
-        <audio id="bgMusic" controls>
-            <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
-        </audio>
-        <button onclick="toggleMode()" class="darkbutton">
-            <span id="modeIcon" class="material-symbols-outlined">dark_mode</span>
-        </button>   
-        <div class="left-half">
-        <h2 class="linebox"> Maze</h2>        
+
+        <div class="top-bar">        
             <div id="time"></div>
+            <audio id="bgMusic" controls>
+                <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
+            </audio>
+            <button onclick="toggleMode()" class="darkbutton">
+                <span id="modeIcon" class="material-symbols-outlined">dark_mode</span>
+            </button>
+        </div>
+        <div class="header-section">
+        <h2 class="linebox"> Maze</h2>        
             <div id="namecard">
                     <img src="media/DOG/3.jpg" class="light-image dark-mode">
                     <img src="media/DOG/black2/34.jpg" class="dark-image">
@@ -378,14 +334,12 @@
 
             <!-- <button onclick="fnAlert()" class="booger boogerText">Do not click</button> -->
 
-        <div class="right-half">
+        <div class="header-section">
             <div id="detail" class="title">
                 <p>Incheon, Korea</p>
                 <p>test@naver.com</p>  
             </div>                             
-            <div id="sns">
-                    <h2>SNS</h2>
-            </div>      
+            <div id="sns"><h2>SNS</h2></div>      
         </div>
 
         <div id="contents">
@@ -466,13 +420,6 @@
 </body>
 </html>
 <script>
-
-// 페이지 로드 시 위치 업데이트
-window.addEventListener("load", updateSNSPosition);
-
-// 스크롤 & 리사이즈 할 때도 위치 업데이트
-window.addEventListener("scroll", updateSNSPosition);
-window.addEventListener("resize", updateSNSPosition);
 
     setInterval(()=>{
         let datetime = new Date();
