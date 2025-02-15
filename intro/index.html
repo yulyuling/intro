@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <style>
      * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
     a {
         display: block;
@@ -16,18 +16,17 @@
         height: 100%;
         text-decoration: none;
     }
-
     body {
-      font-family: sans-serif;
-      max-width: 1900px; /* 페이지 최대 폭 제한 (원하는 대로 조정) */
-      margin: 0 auto;
-      background-color: rgb(235, 191, 134);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+        font-family: sans-serif;
+        max-width: 1900px; /* 페이지 최대 폭 제한 (원하는 대로 조정) */
+        margin: 0 auto;
+        background-color: rgb(235, 191, 134);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
     }
         /* (1) 맨 위 얇은 바 */
     .top-bar {
@@ -47,17 +46,25 @@
     }
     /* (3) 중간 얇은 바 */
     .middle-section {
-      width: 100%;
-      height: 500px;
-      padding: 15px;
-      text-align: center;
+        width: 100%;
+        height: 500px;
+        padding: 15px;
+        text-align: center;
     }
     /* (4) 하단 큰 영역 */
     .bottom-section {
-      width: 100%;
-      height: 100%;
-      margin-top: 0px;
-      padding: 20px;
+        position: absolute;
+        top: 920px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        padding-bottom: 300px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
     }
     @media screen and (max-width: 768px) {
         .header-section {
@@ -68,19 +75,6 @@
         width:  300px; /* 원본 크기 유지 */
         height: 500px; /* 원본 크기 유지 */
 		cursor: pointer;
-    }
-    #contents{
-        position: absolute;
-        top: 800px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        margin-bottom: 1000px;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     @media screen and (max-width: 768px) {
         #contents{
@@ -104,12 +98,18 @@
         margin-top: 30px;
         margin-left: auto;
         right:0;
+        opacity: 0;
+        pointer-events: none;
     }
     .hidden-text {
         /* color: rgb(73, 72, 72, 0); */
         height: 0;
         height: 100%;
-        display: none;
+    }
+    .hidden-text-style{
+        text-indent: 20px;
+        color: #000000;
+
     }
     .contents-text{
         display: block;
@@ -129,46 +129,12 @@
         padding: 30px;
         margin-bottom: 30px;
         transition: all 0.7s ease-in-out;
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
     }
     .contents-text:hover{
         color:#5c0d0d;
-    }
-    .Experience{
-        width: 800px;
-        height: 350px;
-        border-radius: 20px;
-        background-color: rgb(255, 255, 255, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .Skills{
-        width: 800px;
-        height: 200px;
-        border-radius: 20px;
-        background-color: rgb(255, 255, 255, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .Education{
-        width: 800px;
-        height: 350px;
-        border-radius: 20px;
-        background-color: rgb(255, 255, 255, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    #container{
-        top: 500px;
-        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     #namecard {
         position: absolute;
@@ -192,7 +158,7 @@
         font-weight: bold;
         text-align: center;
         top: -50px;
-        left: 390px;
+        left: 200px;
         z-index: 10;
     }
     #sns{
@@ -221,8 +187,8 @@
     }
     .linebox{
         position: relative;
-        top:-110px;
-        left:25px;
+        top:-200px;
+        left:-170px;
         font-size: 120px;
         animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
     }
@@ -349,6 +315,10 @@
         background-color: rgb(235, 191, 134);
         color: #000000;
     }
+    body.dark-mode .hidden-text-style{
+        color:#c21919;
+        font-weight: bold;
+    }
     
   </style>
 </head>
@@ -383,28 +353,31 @@
             <a href="#" ><div id="sns">SNS</div></a>      
         </div>
 
-        <div id="contents">
+        <div class="bottom-section">
             <section>
                 <h2 class="contents-text">
                     Introduce
                 </h2>
                 <div class="hidden-box">
-                    <div class="hidden-text">
-                        <p> 
-                            <ul>
-                                <li>📌취미
-                                    <ul>
-                                        <br>🤍게임, 소설책 읽기                                 
-                                        <br>🖤최애 게임: `Factorio`, `검은사막`
-                                        <br>🤍최애 장르: `공포`, `추리`
-                                        <br>🖤최애작가: `히가시노 게이고`, `미나토 카나에`
-                                    </ul>
-                                <li>📌특이사항
-                                    <ul>
-                                        <br>🖤뚝닥거리는 걸 좋아해서 간단한 차량 정비가능
-                                        <br>🤍골든리트리버 17년 생과 함께 살고 있다.
-                                    </ul>
-                                </li>
+                    <div class="hidden-text"> 
+                        <ul>
+                            <li><h3>📌취미</h3>
+                                <ul>
+                                    <br><h3 style="color: #000000;">· 게임</h3>  <span class="hidden-text-style">&nbsp;&nbsp;Factorio, 검은사막 등</span>                                 
+                                    <br><h3 style="color: #000000;">· 소설, 영화 </h3> <span class="hidden-text-style">&nbsp;&nbsp;장르 (공포, 추리, 스릴러 등)</span>
+                                    <br><h3 style="color: #000000;">· 드라이브 </h3> <span class="hidden-text-style">&nbsp;&nbsp;코스 (영종도, 강화도, 파주 등)</span>
+                                    <br><h3 style="color: #000000;">· 음악 </h3> <span class="hidden-text-style">&nbsp;&nbsp;장르 불문</span>
+                                    <br><h3 style="color: #000000;">최애 작가</h3> <span class="hidden-text-style">&nbsp;&nbsp;&nbsp;(히가시노 게이고, 미나토 가나에 등) </span>
+                                    <br><h3 style="color: #000000;">최애 가수 </h3><span class="hidden-text-style">&nbsp;&nbsp;&nbsp;(Alan Walker, Avicii, Charlie Puth, Lucy 등)</span>
+                                </ul>
+                                <br>
+                            <li><h3>📌특이사항</h3>
+                                <ul>
+                                    <br>뚝닥거리는 걸 좋아해서 간단한 차량 정비가능
+                                    <br>골든 리트리버 17년생과 함께 살고 있다.
+                                    <br>
+                                </ul>
+                            </li>
                     </div>
                 </div>
             </section>
