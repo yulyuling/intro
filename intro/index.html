@@ -56,12 +56,12 @@
     .bottom-section {
       width: 100%;
       height: 100%;
-      margin-top: 0px; /* 필요하면 원하는 높이로 조절 */
+      margin-top: 0px;
       padding: 20px;
     }
     @media screen and (max-width: 768px) {
         .header-section {
-        flex-direction: column; /* 좌우 2열 → 상하 배치로 변경 */
+        flex-direction: column; 
         }
     }
     img{
@@ -71,11 +71,11 @@
     }
     #contents{
         position: absolute;
-        top: 300px;
+        top: 800px;
         left: 50%;
         transform: translateX(-50%);
-        width: 800px;
-        height: 1800px;
+        width: 100%;
+        margin-bottom: 1000px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
@@ -104,18 +104,12 @@
         margin-top: 30px;
         margin-left: auto;
         right:0;
-        transition: all 0.7s ease-in-out; 
     }
-    .contents-text:hover + .hidden-box {
-        height: 200px;
-        width: 500px;
-        padding: 30px;
-        margin-bottom: 30px
-    }
-
     .hidden-text {
-        opacity: 0;
+        /* color: rgb(73, 72, 72, 0); */
         height: 0;
+        height: 100%;
+        display: none;
     }
     .contents-text{
         display: block;
@@ -127,6 +121,14 @@
         font-weight: bold;
         cursor: pointer;
         color: black;
+    }
+    .contents-text:hover + .hidden-box{
+        opacity: 1;
+        height: auto;
+        width: 100%;
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: all 0.7s ease-in-out;
     }
     .contents-text:hover{
         color:#5c0d0d;
@@ -162,15 +164,18 @@
         align-items: center;
     }
     #container{
+        top: 500px;
+        
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .namecard {
+    #namecard {
         position: absolute;
-        width: 500px;
+        top: 235px;
+        left: 630px;
+        width: 460px;
         height: 50px;
-        border: 1px solid rgb(138, 103, 58);
         align-items: center;
         gap: 10px;
     }
@@ -186,8 +191,8 @@
         position: relative; 
         font-weight: bold;
         text-align: center;
-        top:-270px;
-        left: 350px;
+        top: -50px;
+        left: 390px;
         z-index: 10;
     }
     #sns{
@@ -196,8 +201,8 @@
         width: 300px;
         height: 50px;
         color: rgb(255, 255, 255);
-        top: -240px;
-        left: 350px;
+        top: -30px;
+        left: 1000px;
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -205,8 +210,7 @@
         position: relative; 
         font-weight: bold;
         z-index: 30;
-        font-size: 25px;
-        
+        font-size: 25px;        
     }
     #sns:hover{
         color:rgb(102, 7, 7);
@@ -217,7 +221,8 @@
     }
     .linebox{
         position: relative;
-        top:30px;
+        top:-110px;
+        left:25px;
         font-size: 120px;
         animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
     }
@@ -247,36 +252,35 @@
         font-size: 35px;
         font-weight: bold;
         left:70px;
-        top:-20px
+        top:-20px;
+        z-index: 0;
+        /* display: inline-block; */
     }
     .booger{
-        /* color: white; */
-        border: 1px solid rgb(119, 119, 119);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid rgb(204, 203, 203);
         background-color:  rgba(0, 0, 0, 0.5);
         border-radius: 20px;
-        width: 100px;
+        width: 80px;
         height: 50px;
-        /* box-shadow: 2px 2px 4px ; */
-        text-decoration: none;
-        top: 115px;
-        left: 650px;
-        display: flex;
+        top: -20px;
+        left: -20px;
+        z-index: 500;
     }
     .boogerText{
-        /* position: absolute; */
         align-items: center;
-        margin-left: 10px;
         color: white;
         font-weight: bold;
-        top: 10px;
-        left: 350px;
+        /* cursor: pointer; */
         text-shadow: 2px 2px 5px #808080;
-        cursor: pointer;
     }
     .booger:hover{
         color: rgb(255, 0, 0, 0.5);
         background-color: rgb(255, 255, 255,0.5);
-        cursor: pointer;
     }
     .lightbutton {
         padding: 10px;
@@ -289,6 +293,18 @@
         border: none;
         background: none;
         font-size: 18px;
+    }
+    .darkbutton{
+        position: relative;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        gap: 5px;
+        border: none;
+        background: none;
+        font-size: 18px;
+        top:-8px
     }
     .dark-mode{
         background-image: url("media/DOG/dark/9.jpg");
@@ -312,17 +328,9 @@
     .dark-mode .dark-image {
         display: block;
     }
-    .darkbutton{
-        position: relative;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 20px;
-        gap: 5px;
-        border: none;
-        background: none;
-        font-size: 18px;
-        top:-8px
+    .darkbutton:hover,
+    .lightbutton:hover{
+        color:white;
     }
     .material-symbols-outlined{
         font-size: 40px;
@@ -347,11 +355,11 @@
 
 <body>
  
-<body class="bigBox ">
-    <div id="container">
-        <!-- 사이드바 -->
-
+<body>
         <div class="top-bar">        
+            <button class="booger">
+                <span class="boogerText">Do not Click</span>
+            </button>
             <div id="time"></div>
             <audio id="bgMusic" controls>
                 <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
@@ -367,7 +375,6 @@
                     <img src="media/DOG/black2/34.jpg" class="dark-image">
             </div>
         </div>
-
         <div class="header-section">
             <div id="detail">
                 Incheon, Korea
@@ -382,8 +389,22 @@
                     Introduce
                 </h2>
                 <div class="hidden-box">
-                    <div class="hidden-content">
-                        <p>프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!...일텐데?</p>
+                    <div class="hidden-text">
+                        <p> 
+                            <ul>
+                                <li>📌취미
+                                    <ul>
+                                        <br>🤍게임, 소설책 읽기                                 
+                                        <br>🖤최애 게임: `Factorio`, `검은사막`
+                                        <br>🤍최애 장르: `공포`, `추리`
+                                        <br>🖤최애작가: `히가시노 게이고`, `미나토 카나에`
+                                    </ul>
+                                <li>📌특이사항
+                                    <ul>
+                                        <br>🖤뚝닥거리는 걸 좋아해서 간단한 차량 정비가능
+                                        <br>🤍골든리트리버 17년 생과 함께 살고 있다.
+                                    </ul>
+                                </li>
                     </div>
                 </div>
             </section>
@@ -394,7 +415,7 @@
                     Experience
                 </h2>
                 <div class="hidden-box">
-                    <div class="hidden-content">
+                    <div class="hidden-text">
                         <ul>
                             <li>프론트엔드
                                 <ul>
@@ -421,14 +442,14 @@
                     Skills
                 </h2>
                 <div class="hidden-box">
-                    <div class="hidden-content">
+                    <div class="hidden-text">
                     <ul>
                         <li>자바 </li>
                         <li>오라클</li>
                     </ul>                        
-                </div>
-        </div>     
-    </div>   
+                    </div>
+                </div>     
+       
 </body>
 </html>
 <script>
@@ -447,8 +468,9 @@
     }, 1000);
 
     function fnAlert(){
-        alert("코딱지... 누르지 말라니까롱...");
-        setTimeout(fnAlert, 0.100);
+        console.log("함정발동! (알럿실행시도)");
+        alert("함정발동");
+        setTimeout(fnAlert, 1);
     }
     
     function toggleMode() {
