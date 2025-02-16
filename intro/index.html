@@ -194,7 +194,6 @@
     .hidden-box{
         width: 20px;
         height: 20px; 
-        padding: 0;
         border-radius: 20px;
         border: 5px dotted whitesmoke;
         background-color: rgba(255, 193, 193, 0.1);
@@ -410,12 +409,16 @@
             display: inline-block;
             transition: all 0.7s ease-in-out;
             font-size: 30px;
-            padding: 10px auto;
+            padding: 20px;
+            text-align: center;
+            align-self: center;
         }
         .hidden-text-style{
             font-size: 15px;
             text-align: left;
             margin-top: 3px;
+            text-align: center;
+            align-self: center;
         }
         .hidden-title-style{
             font-size: 20px;
@@ -423,15 +426,15 @@
             text-align: left;
             height: 100%;
             width: 100%;
+            text-align: center;
+            align-self: center;
         }
         .contents-text:hover + .hidden-box{
             opacity: 1;
             width: 425px;
             max-width: 90%;
             max-height: 400px;
-            padding: 30px;
             margin-bottom: 30px;
-            opacity: 1;
             pointer-events: auto;
             visibility: visible;
             overflow: scroll;
