@@ -328,15 +328,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* justify-content: flex-start; */
-            /* overflow-x: hidden; */
+            background-size: cover;
+        }
+        body.dark-mode{
+            background-image: url("media/DOG/dark/10.jpg");
+            /* background-size: cover;  */
+            /* background-position: center; */
             background-size: cover;
         }
         .header-section {
-            top:60px;
+            top:-70px;
             flex-direction: column;
             align-items: center;
-            /* justify-content: flex-start; */
         }
         .top-bar{
             top: 0px;
@@ -345,10 +348,18 @@
             position: relative;
             display: flex;
         }
+        .bottom-section{
+            position: relative;
+            width: 100%;
+            top: 200px;
+            right: 700px;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        }
         .bgMusic{
-            left: 50%;
-            transform: translateX(-50%);
-            top:0px;
+            position: absolute;
+            top: 30px;
         }
         #namecard, .linebox{
             top: 130px;
@@ -387,15 +398,6 @@
         }
         #detail {
             top: 670px;
-        }
-        .bottom-section{
-            position: relative;
-            width: 100%;
-            top: 300px;
-            right: 700px;
-            flex-direction: column;
-            align-items: center;
-            justify-items: center;
         }
         .contents-text
         {
