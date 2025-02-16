@@ -321,7 +321,7 @@
     }
     @media screen and (max-width: 425px) {
         body{
-            width: 100%;
+            width: 425px;
             min-height: 100vh;
             height: auto;
             display: flex;
@@ -337,6 +337,7 @@
             background-size: cover;
         }
         .header-section {
+            width: 425px;
             top:-70px;
             flex-direction: column;
             align-items: center;
@@ -350,7 +351,7 @@
         }
         .bottom-section{
             position: relative;
-            width: 100%;
+            width:  425px;
             top: 200px;
             right: 700px;
             flex-direction: column;
@@ -403,7 +404,6 @@
             font-size: 60px;
         }
         .hidden-box{
-            position: absolute;
             margin: auto;
             left: 50%;
             transform: translateX(-50%);
@@ -423,25 +423,21 @@
             height: 100%;
             width: 100%;
         }
-        .contents-text:focus + .hidden-box{
-            /* position: absolute;
+        .contents-text:hover + .hidden-box{
             opacity: 1;
-            height: auto;
-            width: 100%;
-            /* max-width: 90vw; */
-            /* max-height: 400px; */
-            /* overflow-y: auto;
+            width: 425px;
+            max-width: 90%;
+            max-height: 400px;
             padding: 30px;
             margin-bottom: 30px;
             opacity: 1;
             pointer-events: auto;
-            visibility: visible; */
-            
-            display: block;
+            visibility: visible;
+            overflow: scroll;
         }
         .contents-text:hover{
             color:#5c0d0d;
-            cursor: pointer;        }
+        }
     }
     
   </style>
@@ -480,8 +476,8 @@
                 <h2 class="contents-text">
                     Introduce
                 </h2>
-                <div class="hidden-text" tabindex="0"> 
-                    <div class="hidden-box">
+                <div class="hidden-box">
+                    <div class="hidden-text"> 
                             <h3>📌취미</h3>
                                     <br><a class="hidden-title-style">· 게임</a>  <span class="hidden-text-style">&nbsp;&nbsp;Factorio, 검은사막 등</span>                                 
                                     <br><a class="hidden-title-style">· 소설, 영화 </a> <span class="hidden-text-style">&nbsp;&nbsp;장르 (공포, 추리, 스릴러 등)</span>
@@ -504,23 +500,23 @@
                 <h2 class="contents-text">
                     Experience
                 </h2>
-                <div class="hidden-text" tabindex="0">
-                        <div class="hidden-box">
+                <div class="hidden-box">
+                    <div class="hidden-text">
                         <ul>
-                            <li>프론트엔드
+                            <h3>프론트엔드
                                 <ul>
                                     <li class="hidden-text-style">HTML/CSS/JAVASCRIPT </li>
                                 </ul>
-                            </li>
+                            </h3>
                         </ul>
                         <br>
                         <ul>
-                            <li>백엔드
+                            <h3>백엔드
                                 <ul>
                                     <li class="hidden-text-style">JAVA</li>
                                     <li class="hidden-text-style">ORACLE</li>
                                 </ul>                        
-                            </li>
+                            </h3>
                         </ul>
                     </div>
                 </div>             
@@ -531,11 +527,11 @@
                 <h2 class="contents-text">
                     Skills
                 </h2>
-                <div class="hidden-text" tabindex="0">
-                        <div class="hidden-box">
+                <div class="hidden-box">
+                    <div class="hidden-text">
                     <ul>
-                        <li class="hidden-text-style">자바 </li>
-                        <li class="hidden-text-style">오라클</li>
+                        <li class="hidden-text-style">JAVA </li>
+                        <li class="hidden-text-style">ORACLE</li>
                     </ul>                        
                     </div>
                 </div>     
