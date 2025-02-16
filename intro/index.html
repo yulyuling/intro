@@ -403,7 +403,7 @@
             font-size: 60px;
         }
         .hidden-box{
-            position: relative;
+            position: absolute;
             margin: auto;
             left: 50%;
             transform: translateX(-50%);
@@ -423,22 +423,25 @@
             height: 100%;
             width: 100%;
         }
-        .contents-text:hover + .hidden-box{
+        .contents-text:focus + .hidden-box{
+            /* position: absolute;
             opacity: 1;
             height: auto;
             width: 100%;
-            max-width: 90vw;
-            max-height: 400px;
-            overflow-y: auto;
+            /* max-width: 90vw; */
+            /* max-height: 400px; */
+            /* overflow-y: auto;
             padding: 30px;
             margin-bottom: 30px;
             opacity: 1;
             pointer-events: auto;
-            visibility: visible;
+            visibility: visible; */
+            
+            display: block;
         }
         .contents-text:hover{
             color:#5c0d0d;
-        }
+            cursor: pointer;        }
     }
     
   </style>
@@ -477,8 +480,8 @@
                 <h2 class="contents-text">
                     Introduce
                 </h2>
-                <div class="hidden-box">
-                    <div class="hidden-text"> 
+                <div class="hidden-text" tabindex="0"> 
+                    <div class="hidden-box">
                             <h3>📌취미</h3>
                                     <br><a class="hidden-title-style">· 게임</a>  <span class="hidden-text-style">&nbsp;&nbsp;Factorio, 검은사막 등</span>                                 
                                     <br><a class="hidden-title-style">· 소설, 영화 </a> <span class="hidden-text-style">&nbsp;&nbsp;장르 (공포, 추리, 스릴러 등)</span>
@@ -494,14 +497,15 @@
                     </div>
                 </div>
             </section>
+            
             <script src="script.js"></script>
             <!-- 경력 -->
             <section>
                 <h2 class="contents-text">
                     Experience
                 </h2>
-                <div class="hidden-box">
-                    <div class="hidden-text">
+                <div class="hidden-text" tabindex="0">
+                        <div class="hidden-box">
                         <ul>
                             <li>프론트엔드
                                 <ul>
@@ -527,8 +531,8 @@
                 <h2 class="contents-text">
                     Skills
                 </h2>
-                <div class="hidden-box">
-                    <div class="hidden-text">
+                <div class="hidden-text" tabindex="0">
+                        <div class="hidden-box">
                     <ul>
                         <li class="hidden-text-style">자바 </li>
                         <li class="hidden-text-style">오라클</li>
@@ -546,6 +550,11 @@
     hiddenBox.classList.toggle("active");
     });
 });
+    document.addEventListener("DOMContentLoaded", function () {
+    let bgMusic = document.getElementById("bgMusic");
+    bgMusic.volume = 0.5; // 초기 음량을 50%로 설정
+});
+    
     setInterval(()=>{
         let datetime = new Date();
         let time = datetime.getHours()+":"+datetime.getMinutes()+":"+datetime.getSeconds();
