@@ -72,6 +72,7 @@
     #detail{
         position: absolute; 
         border: 3px dotted rgb(255, 255, 255);
+        color: black;
         font-size: 20px;
         border-radius: 20px;
         width: 300px;
@@ -84,6 +85,7 @@
         top: 100px;
         left: 1200px;
         z-index: 10;
+        text-decoration: none;
     }
     #sns{
         position: absolute; 
@@ -179,7 +181,6 @@
         align-items: center;
         color: white;
         font-weight: bold;
-        /* cursor: pointer; */
         text-shadow: 2px 2px 5px #808080;
     }
     .booger:hover{
@@ -452,8 +453,8 @@
  
 <body>
         <div class="top-bar">        
-            <button class="booger">
-                <span class="boogerText">Do not Click</span>
+            <button class="booger boogerText" @click="fnAlert()">
+                Do not Click
             </button>
             <div id="time"></div>
             <audio id="bgMusic" controls>
@@ -466,15 +467,19 @@
         <div class="header-section">
             <h2 class="linebox"> Maze</h2>        
                 <div id="namecard">
-                    <img src="media/DOG/3.jpg" class="light-image dark-mode">
-                    <img src="media/DOG/black2/34.jpg" class="dark-image">
-                </div>
-                <div id="detail">
-                    Incheon, Korea<br>
-                    test@naver.com
+                    <a  href="dog.html" target="_blank">
+                        <img src="media/DOG/3.jpg" class="light-image dark-mode">
+                        <img src="media/DOG/black2/34.jpg" class="dark-image">
+                    </a>
                 </div>
                 <div>
-                <a href="dog.html" target="_blank" id="sns" >SNS</a>
+                    <a href="https://www.naver.com/" target="_blank" id="detail">
+                    Incheon, Korea<br>
+                    test@naver.com
+                    </a>
+                </div>
+                <div>
+                <a href="https://www.instagram.com/" target="_blank" id="sns" >SNS</a>
                 </div>      
         </div>
         <div class="bottom-section">
