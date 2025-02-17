@@ -151,15 +151,6 @@
         }
         
     }    
-    #time{
-        position: relative;
-        font-size: 35px;
-        font-weight: bold;
-        left:70px;
-        top:-20px;
-        z-index: 0;
-        /* display: inline-block; */
-    }
     .booger{
         position: relative;
         display: flex;
@@ -372,10 +363,6 @@
             top: -5px;
             left: 60px;
         }
-        .time{
-            position: absolute;
-            top: 100px
-        }
         .booger{
             visibility: hidden;
         }
@@ -454,7 +441,6 @@
             <button class="booger boogerText" onclick="fnAlert()">
                 Do not Click
             </button>
-            <div id="time"></div>
             <audio id="bgMusic" controls>
                 <source id="audioSource" src="https://yulyuling.github.io/music/music/LittleSamba.mp3" type="audio/mpeg">
             </audio>
@@ -558,12 +544,6 @@
     bgMusic.volume = 0.5; // 초기 음량을 50%로 설정
 });
     
-    setInterval(()=>{
-        let datetime = new Date();
-        let time = datetime.getHours()+":"+datetime.getMinutes()+":"+datetime.getSeconds();
-        let obj = document.querySelector("#time");
-        obj.innerHTML = time;
-    }, 1000);
 
     function fnAlert(){
         alert("함정발동");
@@ -585,7 +565,7 @@
             modeIcon.innerHTML = "dark_mode";
         } else {
             body.classList.add("dark-mode");
-            source.src = "https://yulyuling.github.io/music/music/MissingPersons.mp3.mp3";
+            source.src = "https://yulyuling.github.io/music/music/MissingPersons.mp3";
             modeIcon.innerHTML = "light_mode";
         }
             audio.load();
