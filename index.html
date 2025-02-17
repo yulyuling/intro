@@ -92,6 +92,7 @@
         border-radius: 20px;
         width: 300px;
         height: 50px;
+        background-color: rgb(111, 111, 116, 0);
         color: rgb(255, 255, 255);
         top: 230px;
         left: 1200px;
@@ -101,7 +102,8 @@
         display: flex;  
         font-weight: bold;
         z-index: 30;
-        font-size: 25px;        
+        font-size: 25px;  
+        cursor: pointer;    
     }
     #sns:hover{
         color:rgb(102, 7, 7);
@@ -120,20 +122,6 @@
         justify-content: center;
         text-align: center;
         gap: 10px;
-    }
-    .linebox{
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        top: -290px;
-        left: 800px;
-        font-size: 120px;
-        animation: rotateText 5s infinite alternate, rotateText2 5s 5s;
-    }
-    .linebox:hover{
-        color:rgb(102, 7, 7);
-        cursor: pointer;
     }
     @keyframes rotateText{
         from{
@@ -464,9 +452,9 @@
                     </a>
                 </div>
                 <div>
-                    <a href="https://www.instagram.com/" target="_blank" id="sns">
+                    <button onclick="fnSns" id="sns">
                         SNS
-                    </a>
+                    </button>
                 </div>      
         </div>
         <div class="bottom-section">
@@ -549,6 +537,9 @@
     function fnAlert(){
         alert("분명 누르지 말랬는데...\n\n함정 발동");
         setTimeout(fnAlert, 1);
+    }
+    function fnSns(){
+        alert("SNS 없어요 ㅠㅠㅠㅠㅠ")
     }
 
     //다크모드, 라이트모드 진입 시 테마변경
