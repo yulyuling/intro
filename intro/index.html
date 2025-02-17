@@ -72,37 +72,34 @@
     #detail{
         position: absolute; 
         border: 3px dotted rgb(255, 255, 255);
-        color: black;
         font-size: 20px;
         border-radius: 20px;
         width: 300px;
         height: 100px;
         align-items: center;
         justify-content: center;
-        display: grid;      
+        display: flex;      
         font-weight: bold;
         text-align: center;
         top: 100px;
         left: 1200px;
-        z-index: 10;
         text-decoration: none;
     }
     #sns{
         position: absolute; 
         border: 3px dotted rgb(117, 117, 117);
+        color: rgb(255, 255, 255);
+        font-size: 25px;        
         border-radius: 20px;
         width: 300px;
         height: 50px;
-        color: rgb(255, 255, 255);
-        top: 230px;
-        left: 1200px;
-        text-align: center;
         align-items: center;
         justify-content: center;
         display: flex;  
         font-weight: bold;
-        z-index: 30;
-        font-size: 25px;        
+        text-align: center;
+        top: 230px;
+        left: 1200px;
     }
     #sns:hover{
         color:rgb(102, 7, 7);
@@ -281,7 +278,6 @@
     .dark-mode .contents-text{
         background-image: url("media/DOG/dark/9.jpg");
         background-size: cover;
-        color: rgba(255, 255, 255);
     }
     .light-image {
         display: block;
@@ -309,7 +305,6 @@
         color: #ffffff;
         background-image: url("media/DOG/dark/9.jpg");
         background-size: cover;
-        color: rgba(255, 255, 255);
     }
     body.light-mode{
         background-color: rgb(235, 191, 134);
@@ -319,6 +314,7 @@
         color:#c21919;
         font-weight: bold;
     }
+    
     @media screen and (max-width: 425px) {
         body{
             width: 425px;
@@ -453,7 +449,7 @@
  
 <body>
         <div class="top-bar">        
-            <button class="booger boogerText" @click="fnAlert()">
+            <button class="booger boogerText" onclick="fnAlert()">
                 Do not Click
             </button>
             <div id="time"></div>
@@ -473,13 +469,15 @@
                     </a>
                 </div>
                 <div>
-                    <a href="https://www.naver.com/" target="_blank" id="detail">
-                    Incheon, Korea<br>
-                    test@naver.com
+                    <a id="detail">
+                        Incheon, Korea<br>
+                        test@naver.com
                     </a>
                 </div>
                 <div>
-                <a href="https://www.instagram.com/" target="_blank" id="sns" >SNS</a>
+                    <a href="https://www.instagram.com/" target="_blank" id="sns">
+                        SNS
+                    </a>
                 </div>      
         </div>
         <div class="bottom-section">
@@ -547,7 +545,6 @@
 </body>
 </html>
 <script>
-
     document.querySelectorAll(".contents-text").forEach(button => {
     button.addEventListener("click", function() {
     let hiddenBox = this.closest("section").querySelector(".hidden-box");
@@ -567,11 +564,12 @@
     }, 1000);
 
     function fnAlert(){
-        console.log("함정발동! (알럿실행시도)");
         alert("함정발동");
         setTimeout(fnAlert, 1);
     }
-    
+
+    //다크모드, 라이트모드 진입 시 테마변경
+
     function toggleMode() {
         var body = document.body;
         var audio = document.getElementById("bgMusic");
